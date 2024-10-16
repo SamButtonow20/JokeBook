@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Bulk Upload - Radical Records</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Admin - Radical Records</h1>
+            <ul>
+                <li><a href="admin-upload.html">Bulk Upload</a></li>
+                <li><a href="admin-products.html">Manage Products</a></li>
+                <li><a href="#">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Bulk Upload Products</h2>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <label for="file">Select a file to upload:</label>
+            <input type="file" id="file" name="file" accept=".json, .csv, .txt" required>
+            <button type="submit">Upload File</button>
+        </form>
+
+        <section>
+            <h3>Instructions:</h3>
+            <p>Please upload a file in JSON, CSV, or text format. Here is an example of a valid JSON structure:</p>
+            <pre>
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Abbey Road - The Beatles",
+            "category": "Rock",
+            "price": "29.99",
+            "image": "/images/abbeyroad.jpg"
+        },
+        {
+            "id": "2",
+            "name": "Dark Side of the Moon - Pink Floyd",
+            "category": "Rock",
+            "price": "34.99",
+            "image": "/images/darksideofthemoon.jpg"
+        }
+    ]
+}
+            </pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Radical Records Admin Panel. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
