@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Add a New Joke
+  body
+    h1 Add a New Joke
+    form(action='/jokebook/new-joke' method='POST')
+      div
+        label(for='category') Category:
+        select(name='category' id='category')
+          - if (categories && categories.length > 0)
+            each category in categories
+              option(value=category.name) #{category.name}
+          - else
+            option(value='') No categories available
+      div
+        label(for='setup') Setup:
+        input(type='text' name='setup' id='setup' required)
+      div
+        label(for='delivery') Delivery:
+        input(type='text' name='delivery' id='delivery' required)
+      button(type='submit') Submit
