@@ -1,0 +1,12 @@
+extends layout.pug
+
+block layout-content
+  h1 #{categoryName} Jokes
+  a(href="/jokebook/index")
+    button Back to Categories
+
+  ul
+    each joke in jokes
+      li
+        p= joke.setup
+        p= joke.delivery
