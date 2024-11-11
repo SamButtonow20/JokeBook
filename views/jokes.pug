@@ -1,0 +1,23 @@
+extends partials/layout.pug
+
+block layout-content
+  main.main 
+    h1.main-header #{page}
+    section.main-box
+      each joke in jokes
+        include partials\jokeCard.pug
+           
+
+           form(action='/jokes/new' method='POST')
+        label(for='category') Category
+        select(name='category')
+          each category in categories
+            option(value=category) #{category}
+        
+        label(for='setup') Setup
+        input(type='text' name='setup' placeholder='Enter the setup for the joke')
+
+        label(for='delivery') Delivery
+        input(type='text' name='delivery' placeholder='Enter the punchline/delivery for the joke')
+
+        button(type='submit') Add Joke

@@ -1,0 +1,9 @@
+extends partials/layout.pug
+
+block layout-content
+  main.main 
+    h1.main-header #{page}
+    section.main-box
+      each category in categories
+        include partials\categoryCard.pug
+           
